@@ -15,6 +15,9 @@ async function run() {
     0.1,
     true,
   );
+
+  console.log(res);
+  
   console.timeEnd()
 }
 
