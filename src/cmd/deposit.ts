@@ -5,7 +5,7 @@ import { COIN } from '../config/coin'
 import type { CoinInfo } from '../types/coin'
 import { deepbook_v3_deposit } from '../libs/deepbookv3/balance'
 import { CETUS_BALANCE_MANAGER } from '../libs/deepbookv3/config'
-import { getSuiClient, OFFICIAL_MAINET } from '../utils/sui/client'
+import { getSuiClient, NETWORK_MAINET } from '../utils/sui/client'
 import { dryRun, getCoinObjects } from '../utils/sui/read'
 import { executeTx } from '../utils/sui/write'
 
@@ -14,7 +14,7 @@ const sender = keypair.toSuiAddress()
 console.log('sender:', sender)
 
 async function deposit(coinInfo: CoinInfo, coinAmount: number) {
-  const client = getSuiClient(OFFICIAL_MAINET)
+  const client = getSuiClient(NETWORK_MAINET)
   const tx = new Transaction()
   tx.setSenderIfNotSet(sender)
 
